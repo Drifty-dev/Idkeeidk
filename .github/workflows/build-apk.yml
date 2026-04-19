@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          # ← Se eliminó "cache: npm" — era lo que causaba el error
 
       - name: Configurar Java 17
         uses: actions/setup-java@v4
@@ -27,6 +27,7 @@ jobs:
 
       - name: Instalar dependencias npm
         run: npm install
+        # ← "npm install" en lugar de "npm ci" (no requiere lock file)
 
       - name: Restaurar keystore desde GitHub Secret
         run: |
