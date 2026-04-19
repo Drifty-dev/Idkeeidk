@@ -1,0 +1,35 @@
+# ── Dependencias ──
+node_modules/
+.npm
+
+# ── Android build ──
+android/.gradle/
+android/app/build/
+android/build/
+
+# ── SEGURIDAD: Nunca subir keystore ni passwords ──
+*.keystore
+*.jks
+# Si gradle.properties contiene passwords, descomenta la siguiente línea:
+# android/gradle.properties
+
+# ── React Native ──
+.bundle/
+.metro-health-check*
+
+# ── Variables de entorno ──
+.env
+.env.local
+.env.*.local
+
+# ── IDEs ──
+.idea/
+.vscode/
+*.iml
+
+# ── macOS ──
+.DS_Store
+
+# ── Logs ──
+npm-debug.log*
+yarn-error.log*
