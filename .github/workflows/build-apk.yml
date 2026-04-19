@@ -29,8 +29,15 @@ jobs:
         run: npm install
         # ← "npm install" en lugar de "npm ci" (no requiere lock file)
 
+      - name: Inicializar proyecto React Native
+        run: |
+          npx react-native@0.73.6 init TempApp --skip-install
+          cp -r TempApp/android ./android
+          rm -rf TempApp
+
       - name: Restaurar keystore desde GitHub Secret
         run: |
+          mkdir -p android/app
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode \
             > android/app/netflix-wrapper-key.keystore
 
