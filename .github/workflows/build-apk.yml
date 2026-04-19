@@ -26,7 +26,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Instalar dependencias npm
-        run: npm ci
+        run: npm install
 
       - name: Restaurar keystore desde GitHub Secret
         run: |
